@@ -4,6 +4,7 @@ val vertxVersion: String by project
 plugins {
     java
     kotlin("jvm") version "1.3.50"
+    application
 }
 
 group = "com.example"
@@ -20,10 +21,9 @@ dependencies {
     testCompile("junit", "junit", "4.12")
 }
 
-tasks.create<JavaExec>("run") {
-    main=project.properties.getOrDefault("mainClass", "com.example.HelloVerticle") as String
-    classpath = sourceSets["main"].runtimeClasspath
-    systemProperties["vertx.logger-delegate-factory-class-name"] = "io.vertx.core.logging.SLF4JLogDelegateFactory"
+application {
+    mainClassName = "com.example.HelloVerticle"
+    applicationDefaultJvmArgs = listOf("-Dvertx.logger-delegate-factory-class-name=io.vertx.core.logging.SLF4JLogDelegateFactory")
 }
 
 configure<JavaPluginConvention> {
