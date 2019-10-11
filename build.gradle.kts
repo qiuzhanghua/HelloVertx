@@ -26,6 +26,12 @@ application {
     applicationDefaultJvmArgs = listOf("-Dvertx.logger-delegate-factory-class-name=io.vertx.core.logging.SLF4JLogDelegateFactory")
 }
 
+// not same as applicationDefaultJvmArgs, 
+//run {
+//    val systemProperties = System.getProperties()
+//    systemProperties.setProperty("vertx.logger-delegate-factory-class-name", "io.vertx.core.logging.SLF4JLogDelegateFactory")
+//}
+
 configure<JavaPluginConvention> {
     sourceCompatibility = JavaVersion.VERSION_1_8
 }
