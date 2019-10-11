@@ -10,7 +10,7 @@ class HelloVerticle : AbstractVerticle() {
     private var counter: Long = 1
 
     override fun start() {
-        vertx.setPeriodic(5000) { _ -> logger.info("tick") }
+        vertx.setPeriodic(5000) { _ -> logger.debug("tick") }
 
         vertx.createHttpServer()
             .requestHandler { req ->
