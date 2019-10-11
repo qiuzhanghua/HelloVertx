@@ -17,6 +17,8 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("io.vertx:vertx-core:${vertxVersion}")
+    implementation("io.vertx:vertx-lang-kotlin:${vertxVersion}")
+    implementation("io.vertx:vertx-lang-kotlin-coroutines:${vertxVersion}")
     implementation("ch.qos.logback:logback-classic:1.2.3")
     testCompile("junit", "junit", "4.12")
 }
