@@ -10,11 +10,11 @@ class HelloVerticle : AbstractVerticle() {
     private var counter: Long = 1
 
     override fun start() {
-        vertx.setPeriodic(5000) { _ -> logger.debug("tick") }
+//        vertx.setPeriodic(5000) { _ -> logger.debug("tick") }
 
         vertx.createHttpServer()
             .requestHandler { req ->
-                logger.info("Request #{} from {}", counter++, req.remoteAddress().host())
+//                logger.info("Request #{} from {}", counter++, req.remoteAddress().host())
                 req.response().end("Hello!")
             }
             .listen(8080)
